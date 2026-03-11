@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  postgres:
+    image: 'postgres:15'
+    container_name: vagas_api
+    restart: always
+    environment:
+        POSTGRES_DB: vagas
+        POSTGRES_USER: regis
+        POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - vagas_data:/var/lib/postgresql/data
+volumes:
+  vagas_data:
